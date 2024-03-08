@@ -7,8 +7,15 @@ This BaseApp contains dependencies shared between ALL Sugar Labs applications.
 ```
 git clone --recurse-submodules https://github.com/flathub/org.sugarlabs.BaseApp.git
 cd org.sugarlabs.BaseApp
-flatpak -y --user install org.gnome.{Platform,Sdk}//44
+flatpak -y --user install flathub org.gnome.{Platform,Sdk}//46
 flatpak-builder --user --force-clean --install build org.sugarlabs.BaseApp.json
+```
+
+### Using beta builds (Optional)
+
+Execute this command to add flatpak beta repo
+```
+flatpak --user remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 ```
 
 ## How To Update
@@ -21,9 +28,9 @@ flatpak --user install org.flathub.flatpak-external-data-checker
 
 Then edit `org.sugarlabs.BaseApp.json` to:
 
-1. Bump GNOME runtime to the latest stable version, e.g. `"runtime-version": "44"`
-2. Bump Python version references to the one included in the GNOME runtime, e.g. `flatpak --user run --command=python org.gnome.Platform//44 --version`
-3. Bump Perl version references to the one included in the GNOME SDK, e.g. `flatpak --user run --command=perl org.gnome.Sdk//44 --version`
+1. Bump GNOME runtime to the latest stable version, e.g. `"runtime-version": "46"`
+2. Bump Python version references to the one included in the GNOME runtime, e.g. `flatpak --user run --command=python org.gnome.Platform//46 --version`
+3. Bump Perl version references to the one included in the GNOME SDK, e.g. `flatpak --user run --command=perl org.gnome.Sdk//46 --version`
 4. Update `shared-modules` submodule with `git submodule update --remote`.
 5. Update every single module to the latest stable version. e.g. use `flatpak run --filesystem=$PWD org.flathub.flatpak-external-data-checker org.sugarlabs.BaseApp.json`
 
