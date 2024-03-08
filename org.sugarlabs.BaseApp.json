@@ -1,12 +1,12 @@
 {
     "id": "org.sugarlabs.BaseApp",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "44",
+    "runtime-version": "46",
     "sdk": "org.gnome.Sdk",
     "separate-locales": false,
     "build-options": {
         "env": {
-            "PERL5LIB": "/app/lib/perl5/site_perl/5.36.0/"
+            "PERL5LIB": "/app/lib/perl5/site_perl/5.38.2/"
         }
     },
     "cleanup": [
@@ -37,7 +37,10 @@
                     "sha256": "73ac49785b601479df4ea18a7c79bc1304a8a7c34c02b9472cf1206ae88f01b3",
                     "x-checker-data": {
                         "type": "pypi",
-                        "name": "empy"
+                        "name": "empy",
+                        "versions": {
+                            "<": "4.0"
+                        }
                     }
                 }
             ],
@@ -45,9 +48,9 @@
                 "*"
             ],
             "post-install": [
-                "chmod +x /app/lib/python3.10/site-packages/em.py",
+                "chmod +x /app/lib/python3.11/site-packages/em.py",
                 "mkdir -p /app/bin/",
-                "ln -s /app/lib/python3.10/site-packages/em.py /app/bin/empy"
+                "ln -s /app/lib/python3.11/site-packages/em.py /app/bin/empy"
             ]
         },
         {
@@ -121,8 +124,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork/sugar-artwork-0.120.tar.xz",
-                    "sha256": "6052b4d3488daf78901d2914015e3c67017cb1bb0cf669625b1f1d62921e9afa",
+                    "url": "https://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork/sugar-artwork-0.121.tar.xz",
+                    "sha256": "d28a9b17ec54eab29f39e3dbd490956e9a588357209d523b1978c3df40d7bee2",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork/",
@@ -196,8 +199,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.sugarlabs.org/sources/sucrose/glucose/sugar-toolkit-gtk3/sugar-toolkit-gtk3-0.120.tar.xz",
-                    "sha256": "15476d1cc0bac2367ede4c855625cee88741c4d774908a7e633c264bb68b6928",
+                    "url": "https://download.sugarlabs.org/sources/sucrose/glucose/sugar-toolkit-gtk3/sugar-toolkit-gtk3-0.121.tar.xz",
+                    "sha256": "2b508b28d75fe30967de0650dcc67aaacfa579e707b043a2e43785c315039c57",
                     "x-checker-data": {
                         "type": "html",
                         "url": "https://download.sugarlabs.org/sources/sucrose/glucose/sugar-toolkit-gtk3/",
@@ -217,8 +220,8 @@
                 {
                     "type": "git",
                     "url": "https://github.com/tchx84/sugarapp.git",
-                    "tag": "v1.12",
-                    "commit": "2e2211b3bb7f8ba07a70d8d24131412e04c084ea",
+                    "tag": "v1.13",
+                    "commit": "e05147e156e2cb13ac99985e8670463ffcfc09de",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^v([\\d.]+)$"
